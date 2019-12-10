@@ -1,0 +1,142 @@
+/*css for text*/
+.txt{
+    font-family: 'Segoe UI', 'Lato', sans-serif;
+    text-align: center;
+}
+
+/*css for the buttons*/
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px 3px #555;
+}
+.mouseover:hover {
+    box-shadow: 0px 5px 5px #555;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.mouseover {
+    transition: 0.3s;
+    box-shadow: 0px 0px 0px #000;
+    margin-top: 5px;
+}
+.button {
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 0;
+    border: 2px solid #FFF;
+    float: left;
+    margin-top: 5px;
+    transition: 0.3s;
+    border: 2px solid #000;
+}
+/*css for the header*/
+.header {
+    background-color: #FFF;
+    width: auto;
+    height: 50px;
+    margin: 0px;
+    padding: 10px;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    box-shadow: 0px 2px 2px #555;
+    z-index: 9999;
+}
+.topmargin {
+    padding: 35px;
+}
+.header .button {
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 0;
+    margin-left: 40px;
+    border: 2px solid #FFF;
+    float: left;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+.header .logo {
+    width: 6%;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+#login {
+    position: relative;
+    right: 50px;
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 2px solid #FFF;
+    float: right;
+    margin-top: 5px;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+#login:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px 3px #555;
+}
+.loginbutton {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 300px;
+}
+.logincontent input{
+    border: 2px solid #000;
+    border-radius: 2px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    text-align: center;
+    width: 300px;
+}
+.ab {
+    background-color: #FFF;
+    border-radius: 2px;
+    border: 2px solid #FFF;
+    transition: 0.3s;
+    text-align: center;
+}
+.ab:hover {
+    cursor: pointer;
+    border: 2px solid #000;
+}
+/*css for content*/
+.slideshow {
+    background-color: #FFF;
+    height: 500px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid #000;
+}
+#testimonials {
+    background-color: #DDD;
+    height: 300px;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 10px;
+}
+.content {
+    border: 2px solid #000;
+    border-radius: 2px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+/*css for the footer*/
+.footer {
+    background-color: #DDD;
+    height: 100px;
+    padding: 5px;
+    border-radius: 3px;
+}
