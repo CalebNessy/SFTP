@@ -24,6 +24,10 @@
     <div class="loginform txt">
         <h5>
         <?php
+            $servername = "localhost:3306";
+            $db_username = "nfh_cness";
+            $db_password = "homeschool";
+            $db_database = "nfh_cness";
             $fname = "";
             $lname = "";
             $uid = "";
@@ -125,7 +129,7 @@
             <button class="button loginbutton" value="submit" class = "button" name="signup-submit">Sign Up</button><br>
         </form>
         <?php
-            $mySQLI = new mysqli("localhost:3306", "nfh_cness", "homeschool");
+            $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
             if($mySQLI->connect_error){
                 die("Error connecting to server: " . $mySQLI->connect_error);
             }
