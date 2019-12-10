@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class = "header txt">
-        <img src="Logo.png" alt="Logo" class="logo">
+        <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
         <button class="button" onclick="window.location.href='about.php'">About</button>
         <button class="button">Contact</button>
