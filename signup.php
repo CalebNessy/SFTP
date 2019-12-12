@@ -205,7 +205,7 @@
                 //Insert the form into the database if there were no errors
                 else{
                     //Detect if the username is available
-                    $sql = "SELECT username FROM users WHERE username=?";
+                    $sql = "SELECT sername FROM users WHERE username=?";
                     $stmt = mysqli_stmt_init($mySQLI);
                     //Detect if the SQL was able to contact the database
                     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -218,7 +218,7 @@
                         mysqli_stmt_bind_param($stmt, "s", $username);
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_store_result($stmt);
-                        $resultCheck = mysqli_stmt_num_rows($stmt);
+                        $resultCheck = $mysqli->query("SELECT username FROM users WHERE username = 'CalebNess'");//mysqli_stmt_num_rows($stmt);
                         //Check how many results are given from usernames (Should be 0 or 1)
                         if($resultCheck>0){
                             header("Location: signup.php?error=uidtaken&mail=".$email."&fname=".$firstname."&lname=".$lastname);
