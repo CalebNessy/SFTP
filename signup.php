@@ -31,11 +31,6 @@
     <div class="loginform txt">
         <h5>
         <?php
-            //create variables for starting the server
-            $servername = "localhost:3306";
-            $db_username = "nfh_cness";
-            $db_password = "homeschool";
-            $db_database = "nfh_cness";
             //Create variables for the Users Name, UserID, Email
             $fname = "";
             $lname = "";
@@ -161,10 +156,18 @@
         </form>
         <!--PHP for inserting the filled out form into the database if there are no errors-->
        <?php
+            //create variables for starting the server
+            $servername = "localhost:3306";
+            $db_username = "nfh_cness";
+            $db_password = "homeschool";
+            $db_database = "nfh_cness";
+            //Initialize the Database
             $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
             //detect if there is an error connecting to the database
             if($mySQLI->connect_error){
-                die("Error connecting to server: " . $mySQLI->connect_error);
+                header("location: signup.php?error=connecterror");
+                exit();
+                //die("Error connecting to server: " . $mySQLI->connect_error);
             }
             //Detect if the signup button is pressed
             if(isset($_POST['signup-submit'])){
