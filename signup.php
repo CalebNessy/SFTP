@@ -166,8 +166,7 @@
             //detect if there is an error connecting to the database
             if($mySQLI->connect_error){
                 header("location: signup.php?error=connecterror");
-                exit();
-                //die("Error connecting to server: " . $mySQLI->connect_error);
+                die("Error connecting to server: " . $mySQLI->connect_error);
             }
             //Detect if the signup button is pressed
             if(isset($_POST['signup-submit'])){
