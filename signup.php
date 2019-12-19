@@ -215,7 +215,7 @@
                     //If it was able to connect, run the code for checking the username
                     else{
                         //Check if the Username is available
-                        mysqli_stmt_bind_param($stmt, "s", $username);
+                        $stmt->bind_param("s", $username);
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_store_result($stmt);
                         $resultCheck = mysqli_stmt_num_rows($stmt);
