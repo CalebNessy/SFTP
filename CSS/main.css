@@ -131,6 +131,7 @@
     width: 50%;
     position: relative;
     left: 50%;
+    margin: 10px;
     transform: translate(-50%, 0);
 }
 /*css for the footer*/

@@ -18,8 +18,31 @@
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button id="login" onclick="window.location.href='login.php'">Login</button>
     </div>
-    <div class = "content">
-        <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
+    <div class = "topmargin"></div>
+    <div class = "content txt">
+        <h2>Our Products</h2>
+        <h3><?php 
+            //create variables for starting the server
+            $servername = "localhost:3306";
+            $db_username = "nfh_cness";
+            $db_password = "homeschool";
+            $db_database = "nfh_cness";
+            //Initialize the Database
+            $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+            if($mySQLI->connect_error){
+                echo("Failed to connect: ".$mySQLI->connect_error);
+                exit();
+            }
+            $sql = "SELECT * FROM products";
+            // Perform query
+            $result = $mySQLI -> query($sql);
+            if ($result->num_rows > 0) {
+                echo "Returned rows are: " . $result ->num_rows;
+                // Free result set
+                $result -> free_result();
+            }
+            mysqli_close($mySQLI);
+        ?></h3>
     </div>
 </body>
 </html>

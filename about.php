@@ -18,7 +18,8 @@
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button id="login" onclick="window.location.href='login.php'">Login</button>
     </div>
-    <div class = "content">
+    <div class = "topmargin"></div>
+    <div class = "content txt">
         <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
     </div>
 </body>
