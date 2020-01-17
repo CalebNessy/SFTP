@@ -22,7 +22,7 @@
     <div class = "topmargin"></div>
     <br>
     <div class="loginform">
-        <form action="login.php" class="logincontent">
+        <form action="login.php" class="logincontent" method="post">
             <br>
             <input type="text" name="username" placeholder="Username"><br><br>
             <input class="formcontent" type="text" name="email" placeholder="Email"><br><br>
@@ -32,12 +32,33 @@
         <button class = "button loginbutton" onclick="window.location.href='signup.php'">No account? Sign up here.</button><br>
         
         <?php
-            $mySQLI = new mysqli("localhost:3306", "nfh_cness", "homeschool");
-            if($mySQLI->connect_error){
-                die("Connection Failed." . $mySQLI->connect_error);
+            //create variables for starting the server
+            $servername = "localhost:3306";
+            $db_username = "nfh_cness";
+            $db_password = "homeschool";
+            $db_database = "nfh_cness";
+            //Initialize the Database
+            $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+            session_start();
+            if($_SERVER["REQUEST_METHOD"] == "POST") {
+                if($mySQLI->connect_error){
+                    die("Connection Failed." . $mySQLI->connect_error);
+                }
+                if(isset($_POST['submit'])){
+                    $username = $_POST['username'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $sql = "SELECT username, email, password FROM users WHERE username='$username' AND email='$email' AND password='$password'";
+                    $result = mysqli_query($mySQLI, $sql);
+                    $count = mysqli_num_rows($result);
+                    if($count == 1){
+                        $_SESSION['login_user'] = $username;
+                        header("Location: index.php");
+                    }else{
+                        header("Location: login.php?error=incorrectcreds");
+                    }
+                }
             }
-            
-            echo("Got data succesfully!");
             $mySQLI->close();
         ?>
     </div>

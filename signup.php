@@ -28,7 +28,7 @@
     </div>
     <div class = "topmargin"></div>
     <br>
-    <div class="loginform txt">
+    <div class = "loginform txt">
         <h5>
         <?php
             //Create variables for the Users Name, UserID, Email
@@ -148,7 +148,7 @@
             <br>
             <input type="text" placeholder="First Name" name="firstname" value="<?php echo($fname);?>"><br><br>
             <input type="text" placeholder="Last Name" name="lastname" value="<?php echo($lname);?>"><br><br>
-            <input type="text" placeholder="Username" name="username"value="<?php echo($uid);?>"><br><br>
+            <input type="text" placeholder="Username" name="username" value="<?php echo($uid);?>"><br><br>
             <input type="text" placeholder="Email" name="email" value="<?php echo($mail);?>"><br><br>
             <input type="password" placeholder="Password" name="password"><br><br>
             <input type="password" placeholder="Repeat Password" name="repeat-pwd"><br><br><br><br>
@@ -205,7 +205,6 @@
                 //Insert the form into the database if there were no errors
                 else{
                     //Detect if the username is available
-                    $sql = "SELECT username FROM users WHERE username = ".$username;
                     //Detect if the SQL was able to contact the database
                     if($mySQLI->connect_error){
                         header("Location: signup.php?error=sqlerror&uid=".$username."&mail=".$email."&fname=".$firstname."&lname=".$lastname);
@@ -213,12 +212,21 @@
                     }
                     //If it was able to connect, run the code for checking the username
                     else{
-                        $result = mysqli_query($mySQLI, $sql);
-                        if($result->num_rows > 0){
-                            header("Location: signup.php?error=uidtakenr&mail=".$email."&fname=".$firstname."&lname=".$lastname);
+                        $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+                        $result = mysqli_query($mySQLI, $user_check_query);
+                        $user = mysqli_fetch_assoc($result);
+                        
+                        if ($user) { // if user exists
+                            if ($user['username'] === $username) {
+                                header("Location: signup.php?error=passwordcheck&uid=".$username."&fname=".$firstname."&lname=".$lastname);
+                            }
+
+                            else if ($user['email'] === $email) {
+                                header("Location: signup.php?error=passwordcheck&mail=".$email."&fname=".$firstname."&lname=".$lastname);
+                            }
                         }else{
-                            $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES (".$firstname.", ".$lastname.", ".$username.", ".$email.", ".$password.");";
-                            echo mysqli_query($mySQLI, $sql);
+                            //$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password');";
+                            //echo mysqli_query($mySQLI, $sql);
                             $mySQLI->close();
                             header("Location: signup.php?signup=success");
                         }
