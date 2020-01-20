@@ -43,16 +43,20 @@
                 die("Connection Failed." . $mySQLI->connect_error);
             }
             if($_SERVER["REQUEST_METHOD"] == "POST") {
-                if(isset($_POST['submit'])){
+                if(isset($_POST['login-submit'])){
                     $username = $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
-                    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-                    $sql = "SELECT username, email, password FROM users WHERE username = '$username' AND email = '$email' AND password = '$hashedPwd'";
+                    $sql = "SELECT password FROM users WHERE username = '$username' AND email = '$email'";
                     $result = mysqli_query($mySQLI, $sql);
                     $count = mysqli_num_rows($result);
-                    if($count == 1){
+                    if($count > 0){
                         header("Location: index.php");
+                        if(password_verify($password, $result)){
+                            header("Location: index.php");
+                        }else{
+                            header("Location: login.php?error=incorrectcreds");
+                        }
                     }else{
                         header("Location: login.php?error=incorrectcreds");
                     }
