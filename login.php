@@ -51,7 +51,6 @@
                     $result = mysqli_query($mySQLI, $sql);
                     $count = mysqli_num_rows($result);
                     if($count > 0){
-                        header("Location: index.php");
                         if(password_verify($password, $result)){
                             header("Location: index.php");
                         }else{
