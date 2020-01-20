@@ -126,6 +126,19 @@
                         $mail = $_GET['mail'];
                     }
                 }
+                //Check if the email is taken
+                if($_GET['error'] == "emailtaken"){
+                    echo("That email is taken.");
+                    if(strpos($url, 'fname')){
+                        $fname = $_GET['fname'];
+                    }
+                    if(strpos($url, 'lname')){
+                        $lname = $_GET['lname'];
+                    }
+                    if(strpos($url, 'uid')){
+                        $uid = $_GET['uid'];
+                    }
+                }
                 /*
                     When one of the errors ^above^ is true,
                     All of the variables are returned into the URL 
@@ -212,21 +225,18 @@
                     }
                     //If it was able to connect, run the code for checking the username
                     else{
-                        $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+                        $user_check_query = "SELECT username FROM users WHERE username='$username'";
                         $result = mysqli_query($mySQLI, $user_check_query);
-                        $user = mysqli_fetch_assoc($result);
-                        
-                        if ($user) { // if user exists
-                            if ($user['username'] === $username) {
-                                header("Location: signup.php?error=passwordcheck&uid=".$username."&fname=".$firstname."&lname=".$lastname);
-                            }
-
-                            else if ($user['email'] === $email) {
-                                header("Location: signup.php?error=passwordcheck&mail=".$email."&fname=".$firstname."&lname=".$lastname);
-                            }
+                        $email_check = "SELECT email FROM users WHERE email='$email'";
+                        $res = mysqli_query($mySQLI, $email_check);
+                        if(mysqli_num_rows($res) == 1){
+                            header("Location: signup.php?error=emailtaken&uid=".$username."&fname=".$firstname."&lname=".$lastname);
+                        }else if(mysqli_num_rows($result) == 1){
+                            header("Location: signup.php?error=uidtaken&mail=".$email."&fname=".$firstname."&lname=".$lastname);
                         }else{
-                            //$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password');";
-                            //echo mysqli_query($mySQLI, $sql);
+                            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                            $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashedPassword');";
+                            echo mysqli_query($mySQLI, $sql);
                             $mySQLI->close();
                             header("Location: signup.php?signup=success");
                         }
