@@ -16,6 +16,7 @@
         <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button  class="button" style="border: 2px solid #000;" onclick="window.location.href='contact.php'">Contact</button>
+        <button  class="button" onclick="window.location.href='account.php'">Account</button>
         <button id="login" onclick="window.location.href='login.php'"><?php
             session_start();
             // Check if the user is already logged in

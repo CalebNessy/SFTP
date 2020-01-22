@@ -21,6 +21,8 @@
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <!--Contact Page Button-->
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
+        <!--Account Button-->
+        <button  class="button" onclick="window.location.href='account.php'">Account</button>
         <!--Signup Page Button-->
         <button id="login"  style="border: 2px solid #000;" onclick="window.location.href='signup.php'">Sign Up</button>
         <!--Login Page Button-->
