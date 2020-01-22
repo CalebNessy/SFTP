@@ -27,7 +27,6 @@
         ?></button>
     </div>
     <div class = "content">
-        <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
     </div>
 </body>
 </html>

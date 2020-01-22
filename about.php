@@ -16,7 +16,15 @@
         <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
-        <button id="login" onclick="window.location.href='login.php'">Login</button>
+        <button id="login" onclick="window.location.href='login.php'"><?php
+            session_start();
+            // Check if the user is already logged in
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                echo "Logout as ".$_SESSION['username'];
+            }else{
+                echo "Login";
+            }
+        ?></button>
     </div>
     <div class = "topmargin"></div>
     <div class = "content txt">

@@ -24,7 +24,15 @@
         <!--Signup Page Button-->
         <button id="login"  style="border: 2px solid #000;" onclick="window.location.href='signup.php'">Sign Up</button>
         <!--Login Page Button-->
-        <button id="login"  onclick="window.location.href='login.php'">Login</button>
+        <button id="login" onclick="window.location.href='login.php'"><?php
+            session_start();
+            // Check if the user is already logged in
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                echo "Logout as ".$_SESSION['username'];
+            }else{
+                echo "Login";
+            }
+        ?></button>
     </div>
     <div class = "topmargin"></div>
     <br>
