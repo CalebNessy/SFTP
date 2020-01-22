@@ -234,8 +234,7 @@
                         }else if(mysqli_num_rows($result) == 1){
                             header("Location: signup.php?error=uidtaken&mail=".$email."&fname=".$firstname."&lname=".$lastname);
                         }else{
-                            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                            $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashedPassword');";
+                            $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password');";
                             echo mysqli_query($mySQLI, $sql);
                             $mySQLI->close();
                             header("Location: signup.php?signup=success");

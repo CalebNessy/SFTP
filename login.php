@@ -32,6 +32,14 @@
         <button class = "button loginbutton" onclick="window.location.href='signup.php'">No account? Sign up here.</button><br>
         
         <?php
+            // Initialize the session
+            session_start();
+            
+            // Check if the user is already logged in, if yes then redirect him to welcome page
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                header("location: index.php");
+                exit;
+            }
             //create variables for starting the server
             $servername = "localhost:3306";
             $db_username = "nfh_cness";
@@ -47,17 +55,16 @@
                     $username = $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
-                    $sql = "SELECT password FROM users WHERE username = '$username' AND email = '$email'";
+                    $sql = "SELECT * FROM users WHERE username = '$username' AND email = '$email' AND password = '$password'";
                     $result = mysqli_query($mySQLI, $sql);
                     $count = mysqli_num_rows($result);
                     if($count > 0){
-                        if(password_verify($password, $result)){
-                            header("Location: index.php");
-                        }else{
-                            header("Location: login.php?error=incorrectcreds");
-                        }
+                        header("Location: index.php");
+                        $_SESSION["loggedin"] = true;
+                        $_SESSION["id"] = $id;
+                        $_SESSION["username"] = $username;   
                     }else{
-                        header("Location: login.php?error=incorrectcreds");
+                        header("Location: login.php?error=incorrectcreds&pwd=".$hashedPwd);
                     }
                 }
             }
