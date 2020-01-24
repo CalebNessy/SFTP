@@ -247,7 +247,7 @@
                             $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password');";
                             echo mysqli_query($mySQLI, $sql);
                             $mySQLI->close();
-                            header("Location: signup.php?signup=success");
+                            header("Location: index.php");
                         }
                     }
                 }

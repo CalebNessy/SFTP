@@ -33,8 +33,6 @@
         <h3>Helping animals fly since 2019</h3>
         <div class="content">
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
-            <h4>If you would like to create an account you can sign up here: <button class="ab txt" onclick="window.location.href='signup.php'">Sign Up</button></h4>
-            <h4>Already have an account? No problem, <button class="ab txt" onclick="window.location.href='login.php'">Login</button></h4>
         </div>
     </div>
     <div id = "testimonials" class="txt">

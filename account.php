@@ -28,6 +28,11 @@
         ?></button>
     </div>
     <div class = "content">
+        <h2>
+            <?php
+                
+            ?>
+        </h2>
     </div>
 </body>
 </html>
