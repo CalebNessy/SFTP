@@ -10,6 +10,16 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/login.css" />
 </head>
 <body>
+    <?php
+        session_start();
+        // Check if the user is already logged in
+        $showhide = "hide";
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            $showhide = "show";
+        }else{
+            $showhide = "hide";
+        }
+    ?>
     <div class = "header txt">
         <!--Logo Image-->
         <img src="imgs/Logo.png" alt="Logo" class="logo">
@@ -22,12 +32,11 @@
         <!--Contact Page Button-->
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <!--Account Button-->
-        <button  class="button" onclick="window.location.href='account.php'">Account</button>
+        <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
         <!--Signup Page Button-->
         <button id="login"  style="border: 2px solid #000;" onclick="window.location.href='signup.php'">Sign Up</button>
         <!--Login Page Button-->
         <button id="login" onclick="window.location.href='login.php'"><?php
-            session_start();
             // Check if the user is already logged in
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 echo "Logout as ".$_SESSION['username'];
