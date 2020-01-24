@@ -14,8 +14,8 @@
         <button class="button" style="border: 2px solid #000" onclick="window.location.href='index.php'">Home</button>
         <button class="button" onclick="window.location.href='about.php'">About</button>
         <button class="button" onclick="window.location.href='products.php'">Products</button>
-        <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
-        <button  class="button" onclick="window.location.href='account.php'">Account</button>
+        <button class="button" onclick="window.location.href='contact.php'">Contact</button>
+        <button id = "acctButton" class="button" onclick="window.location.href='account.php'">Account</button>
         <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button id="login" onclick="window.location.href='login.php'"><?php
             session_start();
@@ -27,6 +27,16 @@
             }
         ?></button>
     </div>
+    <?php
+        session_start();
+        // Check if the user is already logged in
+        $showhide = "hide";
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            $showhide = "show";
+        }else{
+            $showhide = "hide";
+        }
+    ?>
     <div class = "topmargin"></div>
     <div class="slideshow txt">
         <h1>Welcome to Flyimals!</h1>
