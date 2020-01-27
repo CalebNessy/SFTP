@@ -36,10 +36,29 @@
             }
         ?></button>
     </div>
+    <div class = "topmargin"></div>
     <div class = "content">
-        <h2>
+        <h2 class = "txt">
             <?php
-                
+                //create variables for starting the server
+                $servername = "localhost:3306";
+                $db_username = "nfh_cness";
+                $db_password = "homeschool";
+                $db_database = "nfh_cness";
+                //Initialize the Database
+                $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+                if($mySQLI->connect_error){
+                    die("Connection Failed." . $mySQLI->connect_error);
+                }
+                $username = $_SESSION['username'];
+                $sql = "SELECT email, firstname, lastname FROM users WHERE username = ".$username;
+                $result = mysqli_query($mySQLI, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo $row["email"];
+                    }
+                }
+                $mySQLI->close();
             ?>
         </h2>
     </div>

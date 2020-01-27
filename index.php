@@ -44,7 +44,7 @@
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
-    <div id = "testimonials" class="content">
+    <div class="slideshow txt">
         <h1>What people have said about our product...</h1>
     </div>
     <div class="footer txt">
