@@ -51,11 +51,14 @@
                     die("Connection Failed." . $mySQLI->connect_error);
                 }
                 $username = $_SESSION['username'];
-                $sql = "SELECT email, firstname, lastname FROM users WHERE username = ".$username;
+                $sql = "SELECT email, firstname, lastname FROM users WHERE username = '$username'";
                 $result = mysqli_query($mySQLI, $sql);
-                if (mysqli_num_rows($result) > 0) {
+                $count = mysqli_num_rows($result);
+                if ($count > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo $row["email"];
+                        echo "Your username: " . $username . "<br><br>";
+                        echo "Your name: " . $row["firstname"] . " " . $row["lastname"] . "<br><br>";
+                        echo "Your email: " . $row["email"];
                     }
                 }
                 $mySQLI->close();
