@@ -38,7 +38,7 @@
     </div>
     <div class = "topmargin"></div>
     <div class = "content">
-        <h2 class = "txt">
+        <h3 class = "txt">
             <?php
                 //create variables for starting the server
                 $servername = "localhost:3306";
@@ -63,7 +63,7 @@
                 }
                 $mySQLI->close();
             ?>
-        </h2>
+        </h3>
     </div>
 </body>
 </html>
