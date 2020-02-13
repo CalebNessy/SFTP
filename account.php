@@ -61,8 +61,12 @@
                         echo "Your email: " . $row["email"];
                     }
                 }
+                if($_SESSION['loggedin'] == false){
+                    header("Location: index.php");
+                }
                 $mySQLI->close();
             ?>
+            <button class = "button">DELETE ACCOUNT</button>
         </h3>
     </div>
 </body>

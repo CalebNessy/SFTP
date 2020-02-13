@@ -51,13 +51,14 @@
                 echo("Failed to connect: ".$mySQLI->connect_error);
                 exit();
             }
-            $sql = "SELECT * FROM products";
+            $sql = "SELECT model_m FROM products";
             // Perform query
-            $result = $mySQLI -> query($sql);
+            $result = mysqli_query($mySQLI, $sql);
             if ($result->num_rows > 0) {
-                echo "Returned rows are: " . $result ->num_rows;
-                // Free result set
-                $result -> free_result();
+                echo "Products";
+                while($row = mysqli_fetch_assoc($result)){
+                    
+                }
             }
             mysqli_close($mySQLI);
         ?></h3>
