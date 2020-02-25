@@ -41,6 +41,7 @@
         <h2>Our Products</h2>
         <h3><?php 
             //create variables for starting the server
+            $modelm = 0;
             $servername = "localhost:3306";
             $db_username = "nfh_cness";
             $db_password = "homeschool";
@@ -51,13 +52,13 @@
                 echo("Failed to connect: ".$mySQLI->connect_error);
                 exit();
             }
-            $sql = "SELECT model_m FROM products";
+            $sql = "SELECT * FROM products";
             // Perform query
             $result = mysqli_query($mySQLI, $sql);
             if ($result->num_rows > 0) {
-                echo "Products";
+                echo "Products: " . $modelm;
                 while($row = mysqli_fetch_assoc($result)){
-                    
+                    $modelm = $row["model_m"];
                 }
             }
             mysqli_close($mySQLI);

@@ -65,8 +65,10 @@
                     header("Location: index.php");
                 }
                 $mySQLI->close();
-            ?>
-            <button class = "button">DELETE ACCOUNT</button>
+            ?><br><br>
+            <button class = "button2 center" onclick = "window.location.href='orders.php'">My Orders</button>
+            <br><br>
+            <button class = "button2 center" name = "delete">DELETE ACCOUNT</button>
         </h3>
     </div>
 </body>
