@@ -11,6 +11,10 @@
 <body>
     <?php
         session_start();
+        if ($_SESSION["loggedout"] == true){
+            echo '<script type = "text/javascript">alert("Your session has timed out, please log in again.")</script>';
+            $_SESSION["loggedout"] = false;
+        }
         // Check if the user is already logged in
         $showhide = "hide";
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -26,7 +30,6 @@
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
-        <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button id="login" onclick="window.location.href='login.php'"><?php
             // Check if the user is already logged in
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -35,6 +38,7 @@
                 echo "Login";
             }
         ?></button>
+        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
     <div class="slideshow txt">

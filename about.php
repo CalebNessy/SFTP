@@ -23,7 +23,6 @@
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
         <button class="button" style="border: 2px solid #000;"  onclick="window.location.href='about.php'">About</button>
-        <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
@@ -35,6 +34,8 @@
                 echo "Login";
             }
         ?></button>
+        <!--Signup Page Button-->
+        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
     <div class = "content txt">

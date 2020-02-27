@@ -23,7 +23,6 @@
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
         <button class="button" onclick="window.location.href='about.php'">About</button>
-        <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
@@ -35,6 +34,8 @@
                 echo "Login";
             }
         ?></button>
+        <!--Signup Page Button-->
+        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <div class = "topmargin"></div>
         <div class = "content txt">
             <h3>My Orders:</h3>
@@ -54,10 +55,15 @@
                 $sql = "SELECT orderno, product, date FROM OrderHistory WHERE username = '$username'";
                 $result = mysqli_query($mySQLI, $sql);
                 $count = mysqli_num_rows($result);
+                $number = 0;
                 if ($count > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
                         echo "Product: " . $row["product"] . "<br>";
-                        echo "<u>" . "_______Date: " . $row["date"] . "_______" . "</u>" . "<br>";
+                        if($number != $row["orderno"]){
+                            echo "<u>" . "_______Date: " . $row["date"] . "_______" . "</u>" . "<br>";
+                        }else{
+                            $number = $row["orderno"];
+                        }
                     }
                 }else{
                     echo "Any orders you make will appear here";

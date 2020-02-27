@@ -33,8 +33,6 @@
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <!--Account Button-->
         <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
-        <!--Signup Page Button-->
-        <button id="login"  style="border: 2px solid #000;" onclick="window.location.href='signup.php'">Sign Up</button>
         <!--Login Page Button-->
         <button id="login" onclick="window.location.href='login.php'"><?php
             // Check if the user is already logged in
@@ -44,6 +42,8 @@
                 echo "Login";
             }
         ?></button>
+        <!--Signup Page Button-->
+        <button  style="border: 2px solid #000;" class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
     <br>

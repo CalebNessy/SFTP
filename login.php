@@ -27,8 +27,8 @@
         <button class="button" onclick="window.location.href='products.php'">Products</button>
         <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
         <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
-        <button id="login" onclick="window.location.href='signup.php'">Sign Up</button>
         <button id="login" style="border: 2px solid #000;"  onclick="window.location.href='login.php'">Login</button>
+        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
     <br>
@@ -71,7 +71,8 @@
                         header("Location: index.php");
                         $_SESSION["loggedin"] = true;
                         $_SESSION["id"] = $id;
-                        $_SESSION["username"] = $username;   
+                        $_SESSION["username"] = $username; 
+                        $_SESSION["loggedout"]  = false;
                     }else{
                         header("Location: login.php?error=incorrectcreds&pwd=".$hashedPwd);
                     }
