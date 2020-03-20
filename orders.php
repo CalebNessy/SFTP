@@ -52,7 +52,8 @@
                     die("Connection Failed." . $mySQLI->connect_error);
                 }
                 $username = $_SESSION['username'];
-                $sql = "SELECT orderno, product, date FROM OrderHistory WHERE username = '$username'";
+                $email = $_SESSION['email'];
+                $sql = "SELECT orderno, product, date FROM OrderHistory WHERE username = '$username' and email = '$email'";
                 $result = mysqli_query($mySQLI, $sql);
                 $count = mysqli_num_rows($result);
                 $number = 0;

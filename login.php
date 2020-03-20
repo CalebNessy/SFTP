@@ -72,7 +72,10 @@
                         $_SESSION["loggedin"] = true;
                         $_SESSION["id"] = $id;
                         $_SESSION["username"] = $username; 
+                        $_SESSION["password"] = $password;
                         $_SESSION["loggedout"]  = false;
+                        $_SESSION["deleted"] = false;
+                        $_SESSION['email'] = $email;
                     }else{
                         header("Location: login.php?error=incorrectcreds&pwd=".$hashedPwd);
                     }

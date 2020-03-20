@@ -63,13 +63,39 @@
                     $modelb = $row["model_b"];
                     $modela = $row["model_a"];
                 }
-                echo "Model M" . "<br>" . "In Stock: " . $modelm . "<br><br>";
-                echo "Model A" . "<br>" . "In Stock: " . $modela . "<br><br>";
-                echo "Model B" . "<br>" . "In Stock: " . $modelb . "<br><br>";
-                echo "Model Z" . "<br>" . "In Stock: " . $modelz . "<br>";
             }
             mysqli_close($mySQLI);
         ?></h3>
+        <button class = "buttonC" onclick = "window.location.href='nearme.php'">Stores near me</button>
+        <br><br>
+        <div class = "product">
+            <h2>Model M</h2>
+            <h3>In stock: <?php echo $modelm;?><h3>
+            <button class = "button2">Add to cart</button>
+            <button class = "button2">Buy now</button>
+        </div>
+        <br>
+        <div class = "product">
+            <h2>Model Z</h2>
+            <h3>In stock: <?php echo $modelz;?><h3>
+            <button class = "button2">Add to cart</button>
+            <button class = "button2">Buy now</button>
+        </div>
+        <br>
+        <div class = "product">
+            <h2>Model b</h2>
+            <h3>In stock: <?php echo $modelb;?><h3>
+            <button class = "button2">Add to cart</button>
+            <button class = "button2">Buy now</button>
+        </div>
+        <br>
+        <div class = "product">
+            <h2>Model A</h2>
+            <h3>In stock: <?php echo $modela;?><h3>
+            <button class = "button2">Add to cart</button>
+            <button class = "button2">Buy now</button>
+        </div>
+        <br>
     </div>
 </body>
 </html>
