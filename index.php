@@ -41,15 +41,22 @@
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
-    <div class="slideshow txt">
+    <div class="slideshow txt" style = "height: 500px;">
         <h1>Welcome to Flyimals!</h1>
         <h3>Helping animals fly since 2019</h3>
         <div class="content">
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
-    <div class="slideshow txt">
-        <h1>What people have said about our product...</h1>
+    <div class="slideshow txt" style = "overflow-x: scroll; height: 500px;">
+        <h1>Some of our products</h1>
+        <div class = "product" style = "width: 25%; margin: 10px;">
+            <h1>Model M</h1>
+        </div>
+        <div style = "width: 25%; margin: 10px;" class = "product overflowItem">
+            <h1>Model Z</h1>
+        </div>
+            
     </div>
     <div class="footer txt">
         <h2>Footer</h2>

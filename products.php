@@ -38,7 +38,7 @@
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
     <div class = "topmargin"></div>
-    <div class = "content txt">
+    <div class = "slideshow txt">
         <h2>Our Products</h2>
         <h3><?php 
             //create variables for starting the server
