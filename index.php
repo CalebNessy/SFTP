@@ -48,13 +48,19 @@
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
-    <div class="slideshow txt" style = "overflow-x: scroll; height: 500px;">
+    <div class="slideshow txt" style = "overflow-x: scroll; height: 500px; display: grid; position: relative;">
         <h1>Some of our products</h1>
-        <div class = "product" style = "width: 25%; margin: 10px;">
+        <div class = "product overflowItem" style = "left: 0;">
             <h1>Model M</h1>
         </div>
-        <div style = "width: 25%; margin: 10px;" class = "product overflowItem">
+        <div class = "product overflowItem" style = "left: 50%;">
             <h1>Model Z</h1>
+        </div>
+        <div class = "product overflowItem" style = "left: 100%;">
+            <h1>Model A</h1>
+        </div>
+        <div class = "product overflowItem" style = "left: 150%;">
+            <h1>Model A</h1>
         </div>
             
     </div>

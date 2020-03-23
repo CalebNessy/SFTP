@@ -134,6 +134,11 @@
     border: 2px solid #000;
 }
 /*css for content*/
+.overflowItem {
+    position: absolute;
+    width: 25%;
+    top: 40px;
+}
 .slideshow {
     background-color: #FFF;
     border-radius: 3px;
@@ -160,9 +165,6 @@
     left: 50%;
     margin: 10px;
     transform: translate(-50%, 0);
-}
-.overflowItem {
-    background-color: black;
 }
 .show {
     visibility: visible;
