@@ -137,7 +137,8 @@
 .overflowItem {
     position: absolute;
     width: 25%;
-    top: 40px;
+    top: 15%;
+    margin-left: 10px;
 }
 .slideshow {
     background-color: #FFF;
