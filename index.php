@@ -60,7 +60,7 @@
             <h1>Model A</h1>
         </div>
         <div class = "product overflowItem" style = "left: 150%;">
-            <h1>Model A</h1>
+            <h1>Model B</h1>
         </div>
             
     </div>
