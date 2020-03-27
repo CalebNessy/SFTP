@@ -36,7 +36,6 @@
         <form class="logincontent" method="post">
             <br>
             <input type="text" name="username" placeholder="Username"><br><br>
-            <input class="formcontent" type="text" name="email" placeholder="Email"><br><br>
             <input class="formcontent" type="password" name="password" placeholder="Password"><br><br><br><br>
             <button class = "button loginbutton" value="submit" class = "button" name="login-submit">Log In</button><br><br><br>
         </form>
@@ -62,9 +61,8 @@
             if($_SERVER["REQUEST_METHOD"] == "POST") {
                 if(isset($_POST['login-submit'])){
                     $username = $_POST['username'];
-                    $email = $_POST['email'];
                     $password = $_POST['password'];
-                    $sql = "SELECT * FROM users WHERE username = '$username' AND email = '$email' AND password = '$password'";
+                    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
                     $result = mysqli_query($mySQLI, $sql);
                     $count = mysqli_num_rows($result);
                     if($count > 0){

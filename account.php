@@ -69,6 +69,7 @@
                 $mySQLI->close();
             ?><br><br>
             <button class = "button2 center" onclick = "window.location.href='orders.php'">My Orders</button>
+            <button class = "button2 center" onclick = "window.location.href='cart.php'">My Cart</button>
             <br><br>
             <button class = "button2 center" name = "delete" onclick = "window.location.href='delete.php'">DELETE ACCOUNT</button>
         </h3>
