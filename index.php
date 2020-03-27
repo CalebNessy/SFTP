@@ -36,7 +36,7 @@
                 echo "Logout as ".$_SESSION['username'];
             }else{
                 echo "Login";
-            }h
+            }
         ?></button>
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
