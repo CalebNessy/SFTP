@@ -71,7 +71,7 @@
         <div class = "product">
             <h2>Model M</h2>
             <h3>In stock: <?php echo $modelm;?><h3>
-            <button class = "button2">Add to cart</button>
+            <button class = "button2" onclick = "window.location.href='cart.php?product=modelm'">Add to cart</button>
             <button class = "button2">Buy now</button>
         </div>
         <br>
