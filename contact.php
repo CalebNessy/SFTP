@@ -37,7 +37,8 @@
         <!--Signup Page Button-->
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
-    <div class = "content">
+    <div class = "topmargin"></div>
+    <div class = "content txt">
         <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
     </div>
 </body>

@@ -9,6 +9,7 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
 </head>
 <body>
+    <!--Initialize the session-->
     <?php
         session_start();
         if ($_SESSION["loggedout"] == true){
@@ -23,6 +24,7 @@
             $showhide = "hide";
         }
     ?>
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" style="border: 2px solid #000" onclick="window.location.href='index.php'">Home</button>
@@ -40,7 +42,9 @@
         ?></button>
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+    <!--Code for the margin above all of the content-->
     <div class = "topmargin"></div>
+    <!--Code for the Welcome Slide-->
     <div class="slideshow txt" style = "height: 500px;">
         <h1>Welcome to Flyimals!</h1>
         <h3>Helping animals fly since 2019</h3>
@@ -48,6 +52,7 @@
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
+    <!--Code for the products-->
     <div class="slideshow txt" style = "overflow-x: scroll; height: 500px; display: grid; position: relative;">
         <h1>Some of our products</h1>
         <div class = "product overflowItem" style = "left: 0;">
@@ -64,6 +69,7 @@
         </div>
             
     </div>
+    <!--Code for the footer-->
     <div class="footer txt">
         <h2>Footer</h2>
     </div>

@@ -21,7 +21,7 @@
             $showhide = "show";
         }else{
             $showhide = "hide";
-            header("Location: login.php");
+            header("Location: login.php?products");
         }
     ?>
     <div class = "header txt">
@@ -43,7 +43,43 @@
     </div>
     <div class = "topmargin"></div>
     <div class = "content txt">
-        
+        <h2>Cart</h2>
+        <form method = "post">
+            <button class = "button2" name = "empty" value = "submit">Empty Cart</button>
+        </form>
+        <div class = "content txt">
+            <?php
+                //create variables for starting the server
+                $servername = "localhost:3306";
+                $db_username = "nfh_cness";
+                $db_password = "homeschool";
+                $db_database = "nfh_cness";
+                //Initialize the Database
+                $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+                if($mySQLI->connect_error){
+                    die("Connection Failed." . $mySQLI->connect_error);
+                }
+                $username = $_SESSION['username'];
+                $email = $_SESSION['email'];
+                if(isset($_POST["empty"])){
+                    $sql = "DELETE FROM cart WHERE username = '$username' AND email = '$email'";
+                    mysqli_query($mySQLI, $sql);
+                    header("Location:cart.php");
+                }
+                $sql = "SELECT item, quantity FROM cart WHERE username = '$username' and email = '$email'";
+                $result = mysqli_query($mySQLI, $sql);
+                $count = mysqli_num_rows($result);
+                if ($count > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "Product: " . $row["item"] . "<br>";
+                        echo "<u>" . "____Qty: ". $row["quantity"] . "____<u><br><br>";
+                    }
+                }else{
+                    echo "Any items you add to your cart will appear here";
+                }
+            ?>
+        </div><br>
+        <button class = "button2" onclick = "window.location.href='order.php'">Place Order</button>
     </div>
 </body>
 </html> 

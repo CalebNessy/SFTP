@@ -65,6 +65,7 @@
                     $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
                     $result = mysqli_query($mySQLI, $sql);
                     $count = mysqli_num_rows($result);
+                    $row = mysqli_fetch_assoc($result);
                     if($count > 0){
                         header("Location: index.php");
                         $_SESSION["loggedin"] = true;
@@ -73,9 +74,9 @@
                         $_SESSION["password"] = $password;
                         $_SESSION["loggedout"]  = false;
                         $_SESSION["deleted"] = false;
-                        $_SESSION['email'] = $email;
+                        $_SESSION['email'] = $row["email"];
                     }else{
-                        header("Location: login.php?error=incorrectcreds&pwd=".$hashedPwd);
+                        header("Location: login.php?error=incorrectcreds");
                     }
                 }
             }

@@ -9,6 +9,7 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
 </head>
 <body>
+    <!--Initialize the session-->
     <?php
         session_start();
         // Check if the user is already logged in
@@ -19,6 +20,8 @@
             $showhide = "hide";
         }
     ?>
+
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
@@ -37,9 +40,15 @@
         <!--Signup Page Button-->
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+
+    <!--Code for the margin above all content-->
     <div class = "topmargin"></div>
+
+    <!--Code for the main body-->
     <div class = "slideshow txt">
         <h2>Our Products</h2>
+
+        <!--Get all of the product stock-->
         <h3><?php 
             //create variables for starting the server
             $servername = "localhost:3306";
@@ -66,36 +75,47 @@
             }
             mysqli_close($mySQLI);
         ?></h3>
+
+        <!--Button for stores near me-->
         <button class = "buttonC" onclick = "window.location.href='nearme.php'">Stores near me</button>
         <br><br>
+        
+        <!--Model M product-->
         <div class = "product">
             <h2>Model M</h2>
             <h3>In stock: <?php echo $modelm;?><h3>
-            <button class = "button2" onclick = "window.location.href='cart.php?product=modelm'">Add to cart</button>
+            <button class = "button2" onclick = "window.location.href='additem.php?product=model_m&qty=1'">Add to cart</button>
             <button class = "button2">Buy now</button>
         </div>
         <br>
+
+        <!--Model Z product-->
         <div class = "product">
             <h2>Model Z</h2>
             <h3>In stock: <?php echo $modelz;?><h3>
-            <button class = "button2">Add to cart</button>
+            <button class = "button2" onclick = "window.location.href='additem.php?product=model_z&qty=1'">Add to cart</button>
             <button class = "button2">Buy now</button>
         </div>
         <br>
+
+        <!--Model B product-->
         <div class = "product">
             <h2>Model b</h2>
             <h3>In stock: <?php echo $modelb;?><h3>
-            <button class = "button2">Add to cart</button>
+            <button class = "button2" onclick = "window.location.href='additem.php?product=model_b&qty=1'">Add to cart</button>
             <button class = "button2">Buy now</button>
         </div>
         <br>
+        
+        <!--Model A product-->
         <div class = "product">
             <h2>Model A</h2>
             <h3>In stock: <?php echo $modela;?><h3>
-            <button class = "button2">Add to cart</button>
+            <button class = "button2" onclick = "window.location.href='additem.php?product=model_a&qty=1'">Add to cart</button>
             <button class = "button2">Buy now</button>
         </div>
         <br>
+        
     </div>
 </body>
 </html>

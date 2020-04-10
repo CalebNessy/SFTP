@@ -53,7 +53,7 @@
                 }
                 $username = $_SESSION['username'];
                 $email = $_SESSION['email'];
-                $sql = "SELECT orderno, product, date FROM OrderHistory WHERE username = '$username' and email = '$email'";
+                $sql = "SELECT * FROM OrderHistory WHERE username = '$username' and email = '$email'";
                 $result = mysqli_query($mySQLI, $sql);
                 $count = mysqli_num_rows($result);
                 $number = 0;
