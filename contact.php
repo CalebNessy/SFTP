@@ -39,9 +39,35 @@
     </div>
     <div class = "topmargin"></div>
     <div class = "content txt">
-        <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
+        <h3>Contact us</h3>
+        <!--Code for contact form-->
+        <form method = "post" class = "contact">
+            <input type = "text" placeholder = "Full Name" name = "name" required = "required"><br><br>
+            <input type = "text" placeholder = "Email" name = "email" required = "required"><br><br>
+            <textarea type = "text" placeholder="Message" name = "message" id = "message" required = "required"></textarea><br><br>
+            <button class = "button2" value="submit" class = "button" name = "submit">Submit</button>
+        </form>
+        <br>
+        <?php
+            if(isset($_POST['submit'])){
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+                $from = 'From: Flyimals Customer';
+                $to = 'calebness75@gmail.com';
+                $subject = 'Customer Message';
+
+                $body = "From: " . $name . "\n E-Mail: " . $email . "\n Message:\n" . $message;
+
+                $sent = mail($to, $subject, $body, $from);
+                if($sent){
+                    echo "Your message has been sent.";
+                }else{
+                    echo "We have encountered a problem, please try again.";
+                }
+            }
+        ?>
     </div>
-    
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>

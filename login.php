@@ -83,7 +83,7 @@
             $mySQLI->close();
         ?>
     </div>
-    
+    <br>
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>

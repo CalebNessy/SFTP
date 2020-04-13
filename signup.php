@@ -26,7 +26,7 @@
         <!--Login Page Button-->
         <button id="login"  onclick="window.location.href='login.php'">Login</button>
     </div>
-    
+
     <div class = "topmargin"></div>
     <br>
 
@@ -246,7 +246,7 @@
             $mySQLI->close();
         ?>
     </div>
-    
+    <br>
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>
