@@ -84,8 +84,11 @@
         <div class = "product">
             <h2>Model M</h2>
             <h3>In stock: <?php echo $modelm;?><h3>
-            <button class = "button2" onclick = "window.location.href='additem.php?product=model_m&qty=1'">Add to cart</button>
-            <button class = "button2">Buy now</button>
+            
+            <form method = "post" class = "logincontent" action = "additem.php?product=model_m">
+                <input type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2">Add to cart</button>
+            </form><br>
         </div>
         <br>
 
@@ -93,17 +96,23 @@
         <div class = "product">
             <h2>Model Z</h2>
             <h3>In stock: <?php echo $modelz;?><h3>
-            <button class = "button2" onclick = "window.location.href='additem.php?product=model_z&qty=1'">Add to cart</button>
-            <button class = "button2">Buy now</button>
+
+            <form method = "post" class = "logincontent" action = "additem.php?product=model_z">
+                <input type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2">Add to cart</button>
+            </form><br>
         </div>
         <br>
 
         <!--Model B product-->
         <div class = "product">
-            <h2>Model b</h2>
+            <h2>Model B</h2>
             <h3>In stock: <?php echo $modelb;?><h3>
-            <button class = "button2" onclick = "window.location.href='additem.php?product=model_b&qty=1'">Add to cart</button>
-            <button class = "button2">Buy now</button>
+
+            <form method = "post" class = "logincontent" action = "additem.php?product=model_b">
+                <input type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2">Add to cart</button>
+            </form><br>
         </div>
         <br>
         
@@ -111,11 +120,14 @@
         <div class = "product">
             <h2>Model A</h2>
             <h3>In stock: <?php echo $modela;?><h3>
-            <button class = "button2" onclick = "window.location.href='additem.php?product=model_a&qty=1'">Add to cart</button>
-            <button class = "button2">Buy now</button>
+
+            <form method = "post" class = "logincontent" action = "additem.php?product=model_a">
+                <input type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2">Add to cart</button>
+            </form><br>
         </div>
         <br>
-        
+
     </div>
 </body>
 </html>

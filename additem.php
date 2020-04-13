@@ -11,8 +11,12 @@
 <body>
     <!--PHP for adding an item to the cart-->
     <?php
-        #initialize the session
+        //initialize the session
         session_start();
+        if($_SESSION["loggedin"] === false){
+            $showhide = "hide";
+            header("Location: login.php");
+        }
         //create variables for starting the server
         $servername = "localhost:3306";
         $db_username = "nfh_cness";
@@ -27,9 +31,11 @@
         $uid = $_SESSION["username"];
         $email = $_SESSION["email"];
         $product = $_GET["product"];
-        $qty = $_GET["qty"];
-        $sql = "INSERT INTO cart (item, quantity, username, email) VALUES ('$product', '$qty', '$uid', '$email')";
-        mysqli_query($mySQLI, $sql);
+        $qty = $_POST["qty"];
+        if($qty>0){
+            $sql = "INSERT INTO cart (item, quantity, username, email) VALUES ('$product', '$qty', '$uid', '$email')";
+            mysqli_query($mySQLI, $sql);
+        }
         header("Location: cart.php");
         exit();
     ?>
