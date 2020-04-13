@@ -84,5 +84,15 @@
         ?>
     </div>
     
+    <!--Code for the footer-->
+    <div class="footer txt">
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="products.php">Products</a>
+        <a href="contact.php">Contact</a>
+        <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
+        <br>
+        <p>2019-2020 Flyimals Inc.</p>
+    </div>
 </body>
 </html>

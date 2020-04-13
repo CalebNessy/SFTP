@@ -78,6 +78,8 @@
                     exit();
                 }
             }
+        }else{
+            header("Location: cart.php");
         }
     ?>
 </body>

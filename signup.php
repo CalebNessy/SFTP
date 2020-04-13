@@ -26,8 +26,11 @@
         <!--Login Page Button-->
         <button id="login"  onclick="window.location.href='login.php'">Login</button>
     </div>
+    
     <div class = "topmargin"></div>
     <br>
+
+    <!--Code for the main content-->
     <div class = "loginform txt">
         <h5>
         <?php
@@ -242,6 +245,17 @@
             }
             $mySQLI->close();
         ?>
+    </div>
+    
+    <!--Code for the footer-->
+    <div class="footer txt">
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="products.php">Products</a>
+        <a href="contact.php">Contact</a>
+        <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
+        <br>
+        <p>2019-2020 Flyimals Inc.</p>
     </div>
 </body>
 </html>

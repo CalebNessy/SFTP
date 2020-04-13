@@ -24,6 +24,7 @@
             $showhide = "hide";
         }
     ?>
+
     <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
@@ -42,8 +43,10 @@
         ?></button>
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+
     <!--Code for the margin above all of the content-->
     <div class = "topmargin"></div>
+
     <!--Code for the Welcome Slide-->
     <div class="slideshow txt" style = "height: 500px;">
         <h1>Welcome to Flyimals!</h1>
@@ -52,6 +55,7 @@
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
+    
     <!--Code for the products-->
     <div class="slideshow txt" style = "overflow-x: scroll; height: 500px; display: grid; position: relative;">
         <h1>Some of our products</h1>
@@ -69,6 +73,7 @@
         </div>
             
     </div>
+    
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>
@@ -77,7 +82,7 @@
         <a href="contact.php">Contact</a>
         <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
         <br>
-        <p style = "float: center;">2019-2020 Flyimals Inc.</p>
+        <p>2019-2020 Flyimals Inc.</p>
     </div>
 </body>
 </html> 
