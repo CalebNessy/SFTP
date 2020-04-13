@@ -3,6 +3,13 @@
     font-family: 'Segoe UI', 'Lato', sans-serif;
     text-align: center;
 }
+.image {
+    width: 80%;
+    left: 10%;
+    top: 0px;
+    position: absolute;
+    z-index: 1;
+}
 
 /*css for the buttons*/
 .button:hover {
@@ -176,6 +183,21 @@
 .product {
     border: 2px solid #000;
     padding: 10%;
+    overflow-y: hidden;
+    position: relative;
+}
+.product2 {
+    border: 2px solid #000;
+    padding: 10%;
+    transition: 0.3s;
+}
+.product2:hover {
+    box-shadow: 3px 5px 5px #000;
+    cursor: pointer;
+}
+.pc {
+    position: relative;
+    z-index: 5;
 }
 .contact input {
     text-align: center;

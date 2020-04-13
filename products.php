@@ -82,54 +82,58 @@
         
         <!--Model M product-->
         <div class = "product">
-            <h2>Model M</h2>
-            <h3>In stock: <?php echo $modelm;?><h3>
+            <img src = "imgs/Model_M.png" class = "image" alt="Model M">
+            <h2 class = "pc">Model M</h2>
+            <h3 class = "pc">In stock: <?php echo $modelm;?><h3>
             
-            <form method = "post" class = "logincontent" action = "additem.php?product=model_m">
-                <input type = "text" name = "qty" placeholder="Quantity"><br>
-                <button class = "button2">Add to cart</button>
+            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_m">
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
         <br>
 
         <!--Model Z product-->
         <div class = "product">
-            <h2>Model Z</h2>
-            <h3>In stock: <?php echo $modelz;?><h3>
-
-            <form method = "post" class = "logincontent" action = "additem.php?product=model_z">
-                <input type = "text" name = "qty" placeholder="Quantity"><br>
-                <button class = "button2">Add to cart</button>
+            <img src = "imgs/Model_z.png" class = "image" alt="Model Z">
+            <h2 class = "pc">Model Z</h2>
+            <h3 class = "pc">In stock: <?php echo $modelz;?><h3>
+            
+            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_z">
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
         <br>
 
         <!--Model B product-->
         <div class = "product">
-            <h2>Model B</h2>
-            <h3>In stock: <?php echo $modelb;?><h3>
-
-            <form method = "post" class = "logincontent" action = "additem.php?product=model_b">
-                <input type = "text" name = "qty" placeholder="Quantity"><br>
-                <button class = "button2">Add to cart</button>
+            <img src = "imgs/Model_b.png" class = "image" alt="Model B">
+            <h2 class = "pc">Model B</h2>
+            <h3 class = "pc">In stock: <?php echo $modelb;?><h3>
+            
+            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_b">
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
         <br>
         
         <!--Model A product-->
         <div class = "product">
-            <h2>Model A</h2>
-            <h3>In stock: <?php echo $modela;?><h3>
-
-            <form method = "post" class = "logincontent" action = "additem.php?product=model_a">
-                <input type = "text" name = "qty" placeholder="Quantity"><br>
-                <button class = "button2">Add to cart</button>
+            <img src = "imgs/Model_a.png" class = "image" alt="Model A">
+            <h2 class = "pc">Model A</h2>
+            <h3 class = "pc">In stock: <?php echo $modela;?><h3>
+            
+            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_a">
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
         <br>
 
     </div>
-    
+
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>
