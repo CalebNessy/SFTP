@@ -7,6 +7,8 @@
     <title>Flyimals</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <?php
@@ -71,6 +73,17 @@
             }
 
         ?>
+    </div>
+    
+    <!--Code for the footer-->
+    <div class="footer txt">
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="products.php">Products</a>
+        <a href="contact.php">Contact</a>
+        <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
+        <br>
+        <p>2019-2020 Flyimals Inc.</p>
     </div>
 </body>
 </html>

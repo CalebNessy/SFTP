@@ -7,6 +7,8 @@
     <title>Flyimals</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!--Initialize the session-->
@@ -58,7 +60,7 @@
     
     <!--Code for the products-->
     <div class="slideshow txt" style = "overflow-x: scroll; height: 500px; display: grid; position: relative;">
-        <h1>Some of our products</h1>
+        <h1>Our products</h1>
         <div onclick = "window.location.href='products.php'"class = "product2 overflowItem" style = "left: 0;">
             <h1 class = "pc">Model M</h1>
             <img src = "imgs/Model_M.png" class = "image" alt="Model A">

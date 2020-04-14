@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
     <link rel = "stylesheet" type = "text/css" href = "CSS/login.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <?php
@@ -32,7 +34,8 @@
     </div>
     <div class = "topmargin"></div>
     <br>
-    <div class="loginform">
+    <div class="loginform txt" style = "height: 500px;">
+        <h1>Log In</h1>
         <form class="logincontent" method="post">
             <br>
             <input type="text" name="username" placeholder="Username"><br><br>

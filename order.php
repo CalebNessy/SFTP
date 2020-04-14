@@ -27,55 +27,63 @@
         $result = mysqli_query($mySQLI, $sql);
         $count = mysqli_num_rows($result);
         if ($count > 0) {
+            $returned = null;
             while($row = mysqli_fetch_assoc($result)) {
                 $uid = $row["username"];
                 $product = $row["item"];
                 $qty = $row["quantity"];
                 $email = $row["email"];
-                $date = date("Y/m/d");
-                $sql = "INSERT INTO OrderHistory (username, product, date, email, orderno) VALUES ('$uid', '$product', '$date', '$email', '$qty')";
-                mysqli_query($mySQLI, $sql);
-                $sql = "DELETE FROM cart WHERE username = '$uid' and email = '$email'";
-                mysqli_query($mySQLI, $sql);
-                if($product == "model_m"){
-                    $cqty = "SELECT model_m FROM products";
-                    $result = mysqli_query($mySQLI, $cqty);
-                    $itm = mysqli_fetch_assoc($result);
-                    $quantity = $itm["model_m"] - $qty;
-                    $sql2 = "UPDATE products SET model_m = '$quantity'";
-                    mysqli_query($mySQLI, $sql2);
-                    header("Location: orders.php");
-                    exit();
-                }
-                if($product == "model_z"){
-                    $cqty = "SELECT model_z FROM products";
-                    $result = mysqli_query($mySQLI, $cqty);
-                    $itm = mysqli_fetch_assoc($result);
-                    $quantity = $itm["model_z"] - $qty;
-                    $sql2 = "UPDATE products SET model_z = '$quantity'";
-                    mysqli_query($mySQLI, $sql2);
-                    header("Location: orders.php");
-                    exit();
-                }
-                if($product == "model_a"){
-                    $cqty = "SELECT model_a FROM products";
-                    $result = mysqli_query($mySQLI, $cqty);
-                    $itm = mysqli_fetch_assoc($result);
-                    $quantity = $itm["model_a"] - $qty;
-                    $sql2 = "UPDATE products SET model_a = '$quantity'";
-                    mysqli_query($mySQLI, $sql2);
-                    header("Location: orders.php");
-                    exit();
-                }
-                if($product == "model_b"){
-                    $cqty = "SELECT model_b FROM products";
-                    $result = mysqli_query($mySQLI, $cqty);
-                    $itm = mysqli_fetch_assoc($result);
-                    $quantity = $itm["model_b"] - $qty;
-                    $sql2 = "UPDATE products SET model_b = '$quantity'";
-                    mysqli_query($mySQLI, $sql2);
-                    header("Location: orders.php");
-                    exit();
+                $sql = "SELECT * FROM products";
+                $rslt = mysqli_query($mySQLI, $sql);
+                $returned = mysqli_fetch_assoc($rslt);
+                if($qty <= $returned[$product]){
+                    $date = date("Y/m/d");
+                    $sql = "INSERT INTO OrderHistory (username, product, date, email, orderno) VALUES ('$uid', '$product', '$date', '$email', '$qty')";
+                    mysqli_query($mySQLI, $sql);
+                    $sql = "DELETE FROM cart WHERE username = '$uid' and email = '$email'";
+                    mysqli_query($mySQLI, $sql);
+                    if($product == "model_m"){
+                        $cqty = "SELECT model_m FROM products";
+                        $result = mysqli_query($mySQLI, $cqty);
+                        $itm = mysqli_fetch_assoc($result);
+                        $quantity = $itm["model_m"] - $qty;
+                        $sql2 = "UPDATE products SET model_m = '$quantity'";
+                        mysqli_query($mySQLI, $sql2);
+                        header("Location: orders.php");
+                        exit();
+                    }
+                    if($product == "model_z"){
+                        $cqty = "SELECT model_z FROM products";
+                        $result = mysqli_query($mySQLI, $cqty);
+                        $itm = mysqli_fetch_assoc($result);
+                        $quantity = $itm["model_z"] - $qty;
+                        $sql2 = "UPDATE products SET model_z = '$quantity'";
+                        mysqli_query($mySQLI, $sql2);
+                        header("Location: orders.php");
+                        exit();
+                    }
+                    if($product == "model_a"){
+                        $cqty = "SELECT model_a FROM products";
+                        $result = mysqli_query($mySQLI, $cqty);
+                        $itm = mysqli_fetch_assoc($result);
+                        $quantity = $itm["model_a"] - $qty;
+                        $sql2 = "UPDATE products SET model_a = '$quantity'";
+                        mysqli_query($mySQLI, $sql2);
+                        header("Location: orders.php");
+                        exit();
+                    }
+                    if($product == "model_b"){
+                        $cqty = "SELECT model_b FROM products";
+                        $result = mysqli_query($mySQLI, $cqty);
+                        $itm = mysqli_fetch_assoc($result);
+                        $quantity = $itm["model_b"] - $qty;
+                        $sql2 = "UPDATE products SET model_b = '$quantity'";
+                        mysqli_query($mySQLI, $sql2);
+                        header("Location: orders.php");
+                        exit();
+                    }
+                }else{
+                    header("Location: cart.php?error=outofstock");
                 }
             }
         }else{

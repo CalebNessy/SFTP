@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
     <link rel = "stylesheet" type = "text/css" href = "CSS/login.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class = "header txt">
@@ -31,7 +33,8 @@
     <br>
 
     <!--Code for the main content-->
-    <div class = "loginform txt">
+    <div class = "loginform txt" style = "height: 500px;">
+        <h1>Sign Up</h1>
         <h5>
         <?php
             //Create variables for the Users Name, UserID, Email

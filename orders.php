@@ -7,6 +7,8 @@
     <title>Flyimals</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <?php
@@ -36,46 +38,50 @@
         ?></button>
         <!--Signup Page Button-->
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
-        <div class = "topmargin"></div>
+
+    </div>
+
+    <div class = "topmargin"></div>
+
+    <div class = "content txt">
+        <h3>My Orders:</h3>
         <div class = "content txt">
-            <h3>My Orders:</h3>
-            <div class = "content txt">
-                <?php
-                //create variables for starting the server
-                $servername = "localhost:3306";
-                $db_username = "nfh_cness";
-                $db_password = "homeschool";
-                $db_database = "nfh_cness";
-                //Initialize the Database
-                $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
-                if($mySQLI->connect_error){
-                    die("Connection Failed." . $mySQLI->connect_error);
-                }
-                $username = $_SESSION['username'];
-                $email = $_SESSION['email'];
-                $sql = "SELECT * FROM OrderHistory WHERE username = '$username' and email = '$email'";
-                $result = mysqli_query($mySQLI, $sql);
-                $count = mysqli_num_rows($result);
-                $number = 0;
-                if ($count > 0) {
-                    while($row = mysqli_fetch_assoc($result)) {
-                        echo "Product: " . $row["product"] . "<br>";
-                        if($number != $row["orderno"]){
-                            echo "<u>" . "_______Date: " . $row["date"] . "_______" . "</u>" . "<br>";
-                        }else{
-                            $number = $row["orderno"];
-                        }
+            <?php
+            //create variables for starting the server
+            $servername = "localhost:3306";
+            $db_username = "nfh_cness";
+            $db_password = "homeschool";
+            $db_database = "nfh_cness";
+            //Initialize the Database
+            $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+            if($mySQLI->connect_error){
+                die("Connection Failed." . $mySQLI->connect_error);
+            }
+            $username = $_SESSION['username'];
+            $email = $_SESSION['email'];
+            $sql = "SELECT * FROM OrderHistory WHERE username = '$username' and email = '$email'";
+            $result = mysqli_query($mySQLI, $sql);
+            $count = mysqli_num_rows($result);
+            $number = 0;
+            if ($count > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "Product: " . $row["product"] . "<br>";
+                    if($number != $row["orderno"]){
+                        echo "<u>" . "_______Date: " . $row["date"] . "_______" . "</u>" . "<br>";
+                    }else{
+                        $number = $row["orderno"];
                     }
-                }else{
-                    echo "Any orders you make will appear here";
                 }
-                if($_SESSION['loggedin'] == false){
-                    header("Location: index.php");
-                }
-                ?>
-            </div>
+            }else{
+                echo "Any orders you make will appear here";
+            }
+            if($_SESSION['loggedin'] == false){
+                header("Location: index.php");
+            }
+            ?>
         </div>
     </div>
+    <br>
     
     <!--Code for the footer-->
     <div class="footer txt">

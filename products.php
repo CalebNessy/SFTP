@@ -7,6 +7,8 @@
     <title>Flyimals</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!--Initialize the session-->
@@ -87,7 +89,7 @@
             <h3 class = "pc">In stock: <?php echo $modelm;?><h3>
             
             <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_m">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
@@ -100,7 +102,7 @@
             <h3 class = "pc">In stock: <?php echo $modelz;?><h3>
             
             <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_z">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
@@ -113,7 +115,7 @@
             <h3 class = "pc">In stock: <?php echo $modelb;?><h3>
             
             <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_b">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity" required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
@@ -126,7 +128,7 @@
             <h3 class = "pc">In stock: <?php echo $modela;?><h3>
             
             <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_a">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"><br>
+                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
         </div>
