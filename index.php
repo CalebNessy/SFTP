@@ -50,10 +50,11 @@
     <div class = "topmargin"></div>
 
     <!--Code for the Welcome Slide-->
-    <div class="slideshow txt" style = "height: 500px;">
-        <h1>Welcome to Flyimals!</h1>
-        <h3>Helping animals fly since 2019</h3>
-        <div class="content">
+    <div class="slideshow txt hidden" style = "height: 500px;">
+        <img src = "imgs/pig.png" class = "image" alt = "In loving memory of Timmy.">
+        <h1 class = "pc">Welcome to Flyimals!</h1>
+        <h3 class = "pc">Helping animals fly since 2019</h3>
+        <div class="content pc">
             <h4>Questions? Comments? Concerns? Your feedback is our most helpful tool! <button class="ab txt" onclick="window.location.href='contact.php'">Contact Us!</button></h4>
         </div>
     </div>
