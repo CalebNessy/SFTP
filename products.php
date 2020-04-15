@@ -120,7 +120,7 @@
                 <input class = "pc" type = "text" name = "qty" placeholder="Quantity" required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
-            <p class = "pc">It does not have wings as it is designed for those who prefer the ground.<br>Only 49.99!</p>
+            <p class = "pc">It does not have wings as it is designed for those who prefer the ground.<br>Or for those who already have wings (Like ducks).<br>Only 49.99!</p>
         </div>
         <br>
         
