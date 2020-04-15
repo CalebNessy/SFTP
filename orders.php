@@ -66,6 +66,7 @@
             if ($count > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "Product: " . $row["product"] . "<br>";
+                    echo "Quantity: ". $row["orderno"] . "<br>";
                     if($number != $row["orderno"]){
                         echo "<u>" . "_______Date: " . $row["date"] . "_______" . "</u>" . "<br>";
                     }else{

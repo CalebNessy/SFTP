@@ -48,7 +48,7 @@
 
     <!--Code for the main body-->
     <div class = "slideshow txt">
-        <h2>Our Products</h2>
+        <h1>Our Products</h1>
 
         <!--Get all of the product stock-->
         <h3><?php 
@@ -81,7 +81,7 @@
         <!--Button for stores near me-->
         <button class = "buttonC" onclick = "window.location.href='nearme.php'">Stores near me</button>
         <br><br>
-        
+        <h2>All models include built in straps</h2>
         <!--Model M product-->
         <div class = "product">
             <img src = "imgs/Model_M.png" class = "image" alt="Model M">
@@ -92,6 +92,7 @@
                 <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
+            <p class = "pc">Ideal for anyone looking to have a bit of fun.<br>For just $99.99 you and your pet can have a blast of a time! (and not just figuratively)</p>
         </div>
         <br>
 
@@ -105,6 +106,7 @@
                 <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
+            <p class = "pc">If you want aerodynamics and speed, this is the one you are looking for!<br>With a built in gps just in case they go too far.<br>Only $149.99!</p>
         </div>
         <br>
 
@@ -118,6 +120,7 @@
                 <input class = "pc" type = "text" name = "qty" placeholder="Quantity" required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
+            <p class = "pc">It does not have wings as it is designed for those who prefer the ground.<br>Only 49.99!</p>
         </div>
         <br>
         
@@ -131,6 +134,7 @@
                 <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
                 <button class = "button2 pc">Add to cart</button>
             </form><br>
+            <p class = "pc">Our open-source model!<br>If you are a wanting something you can add your own upgrades to, this one is for you.<br>Only $199.99!</p>
         </div>
         <br>
 
