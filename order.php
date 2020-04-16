@@ -9,6 +9,7 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
 </head>
 <body>
+    <!--Initialize the session-->
     <?php
         session_start();
         //create variables for starting the server

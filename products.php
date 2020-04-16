@@ -11,14 +11,17 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    
     <!--Initialize the session-->
     <?php
         session_start();
         // Check if the user is already logged in
         $showhide = "hide";
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            //Show the logout button if user is logged in
             $showhide = "show";
         }else{
+            //Show the login button if user is logged out
             $showhide = "hide";
         }
     ?>

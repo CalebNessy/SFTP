@@ -11,16 +11,21 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!--Initialize the Session-->
     <?php
         session_start();
         // Check if the user is already logged in
         $showhide = "hide";
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            //If the user is logged in, then show the logout button
             $showhide = "show";
         }else{
+            //If the user is not logged in, show the login button
             $showhide = "hide";
         }
     ?>
+    
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
@@ -39,15 +44,20 @@
         <!--Signup Page Button-->
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+
+    <!--Code for top margin-->
     <div class = "topmargin"></div>
+
+    <!--The main content-->
     <div class = "content txt" style = "height: 700px;">
         <h3>Hi! We are Flyimals, a company that makes jetpacks for animals.</h3>
         <h5>Here is a short video explaining our products and how we came up with the idea:</h5>
+        <!--The about video-->
         <iframe width="660" height="415" src="https://www.youtube.com/embed/PKHom8KW_lU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     
     <!--Code for the footer-->
-    <div class="footer txt">
+    <div class="footer txt pc">
         <a href="index.php">Home</a>
         <a href="about.php">About</a>
         <a href="products.php">Products</a>

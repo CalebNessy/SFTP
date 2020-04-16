@@ -12,6 +12,8 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+    <!--Code for the header-->
     <div class = "header txt">
         <!--Logo Image-->
         <img src="imgs/Logo.png" alt="Logo" class="logo">
@@ -29,6 +31,7 @@
         <button id="login"  onclick="window.location.href='login.php'">Login</button>
     </div>
 
+    <!--Code for the top margin-->
     <div class = "topmargin"></div>
     <br>
 
@@ -250,6 +253,7 @@
         ?>
     </div>
     <br>
+    
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>

@@ -62,18 +62,22 @@
     <!--Code for the products-->
     <div class="slideshow txt" style = "overflow-x: scroll; height: 500px; display: grid; position: relative;">
         <h1>Our products</h1>
+        <!--Model M product slide-->
         <div onclick = "window.location.href='products.php'"class = "product2 overflowItem" style = "left: 0;">
             <h1 class = "pc">Model M</h1>
             <img src = "imgs/Model_M.png" class = "image" alt="Model A">
         </div>
+        <!--Model Z product slide-->
         <div onclick = "window.location.href='products.php'"class = "product2 overflowItem" style = "left: 50%;">
             <h1 class = "pc">Model Z</h1>
             <img src = "imgs/Model_z.png" class = "image" alt="Model Z">
         </div>
+        <!--Model A product slide-->
         <div onclick = "window.location.href='products.php'"class = "product2 overflowItem" style = "left: 100%;">
             <h1 class = "pc">Model A</h1>
             <img src = "imgs/Model_a.png" class = "image" alt="Model A">
         </div>
+        <!--Model B product slide-->
         <div onclick = "window.location.href='products.php'" class = "product2 overflowItem" style = "left: 150%;">
             <h1 class = "pc">Model B</h1>
             <img src = "imgs/Model_b.png" class = "image" alt="Model B">
@@ -82,7 +86,8 @@
     </div>
 
     <!--Code for the footer-->
-    <div class="footer txt">
+    <div class="footer txt pc">
+        <!--Code for links to different pages-->
         <a href="index.php">Home</a>
         <a href="about.php">About</a>
         <a href="products.php">Products</a>
@@ -91,5 +96,6 @@
         <br>
         <p>2019-2020 Flyimals Inc.</p>
     </div>
+    
 </body>
 </html> 

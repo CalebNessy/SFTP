@@ -177,6 +177,7 @@
     left: 50%;
     margin: 10px;
     transform: translate(-50%, 0);
+    background-color: #FFF;
 }
 .show {
     visibility: visible;

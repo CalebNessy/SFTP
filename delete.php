@@ -9,7 +9,11 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
 </head>
 <body>
+
+    <!--Code for the top margin-->
     <div class = "topmargin"></div>
+
+    <!--Code for the content-->
     <div class = "content txt">
             <h3>You are about to delete your account, this can not be undone.</h3>
             <form class = "logincontent content" action = "delete.php" method = "post">

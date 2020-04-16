@@ -11,6 +11,7 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!--Code for initializing the session-->
     <?php
         session_start();
         // Check if the user is already logged in
@@ -21,6 +22,8 @@
             $showhide = "hide";
         }
     ?>
+
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
@@ -39,7 +42,11 @@
         <!--Signup Page Button-->
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+
+    <!--Code for the top margin-->
     <div class = "topmargin"></div>
+
+    <!--Code for the content-->
     <div class = "content txt" style = "height: 500px;">
         <h1>Contact us</h1>
         <!--Code for contact form-->
@@ -71,6 +78,7 @@
             }
         ?>
     </div>
+    
     <!--Code for the footer-->
     <div class="footer txt">
         <a href="index.php">Home</a>

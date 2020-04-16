@@ -12,6 +12,7 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!--Initialize the session-->
     <?php
         session_start();
         // Check if the user is already logged in
@@ -22,6 +23,8 @@
             $showhide = "hide";
         }
     ?>
+
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
@@ -32,8 +35,12 @@
         <button id="login" style="border: 2px solid #000;"  onclick="window.location.href='login.php'">Login</button>
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
     </div>
+
+    <!--Code for the top margin-->
     <div class = "topmargin"></div>
     <br>
+
+    <!--Code for the login form-->
     <div class="loginform txt" style = "height: 500px;">
         <h1>Log In</h1>
         <form class="logincontent" method="post">
@@ -86,6 +93,8 @@
             $mySQLI->close();
         ?>
     </div>
+
+    
     <br>
     <!--Code for the footer-->
     <div class="footer txt">

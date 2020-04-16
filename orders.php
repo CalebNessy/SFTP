@@ -11,6 +11,8 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+    <!--Initialize the session-->
     <?php
         session_start();
         // Check if the user is already logged in
@@ -21,6 +23,8 @@
             $showhide = "hide";
         }
     ?>
+
+    <!--Code for the header-->
     <div class = "header txt">
         <img src="imgs/Logo.png" alt="Logo" class="logo">
         <button class="button" onclick="window.location.href='index.php'">Home</button>
@@ -40,9 +44,11 @@
         <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
 
     </div>
-
+    
+    <!--Code for the top margin-->
     <div class = "topmargin"></div>
 
+    <!--Code for main content-->
     <div class = "content txt">
         <h3>My Orders:</h3>
         <div class = "content txt">
@@ -57,6 +63,7 @@
             if($mySQLI->connect_error){
                 die("Connection Failed." . $mySQLI->connect_error);
             }
+            //Create variables from the session data
             $username = $_SESSION['username'];
             $email = $_SESSION['email'];
             $sql = "SELECT * FROM OrderHistory WHERE username = '$username' and email = '$email'";
@@ -65,6 +72,7 @@
             $number = 0;
             if ($count > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
+                    //Display the users orders
                     echo "Product: " . $row["product"] . "<br>";
                     echo "Quantity: ". $row["orderno"] . "<br>";
                     if($number != $row["orderno"]){
@@ -77,6 +85,7 @@
                 echo "Any orders you make will appear here";
             }
             if($_SESSION['loggedin'] == false){
+                //If there is nobody logged in, go to index.php
                 header("Location: index.php");
             }
             ?>
