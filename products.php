@@ -52,6 +52,10 @@
     <!--Code for the main body-->
     <div class = "slideshow txt">
         <h1>Our Products</h1>
+        <!--Button for stores near me-->
+        <button class = "buttonC" onclick = "window.location.href='nearme.php'">Stores near me</button>
+        <br><br>
+        <h2>All models include built in straps</h2>
 
         <!--Get all of the product stock-->
         <h3><?php 
@@ -72,86 +76,22 @@
             $count = mysqli_num_rows($result);
             if ($count > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                    $modelm = $row["model_m"];
-                    $modelz = $row["model_z"];
-                    $modelb = $row["model_b"];
-                    $modela = $row["model_a"];
+                    $product = $row["product"];
+                    $productName = $row["productName"];
+                    $description = $row["description"];
+                    $qty = $row["qty"];
+                    $image = $row["image"];
+                    $img = "data:image/jpeg;base64, " . base64_encode( $row['image'] );
+                    include "includes/product.php";
                 }
             }
             mysqli_close($mySQLI);
         ?></h3>
 
-        <!--Button for stores near me-->
-        <button class = "buttonC" onclick = "window.location.href='nearme.php'">Stores near me</button>
-        <br><br>
-        <h2>All models include built in straps</h2>
-        <!--Model M product-->
-        <div class = "product">
-            <img src = "imgs/Model_M.png" class = "image" alt="Model M">
-            <h2 class = "pc">Model M</h2>
-            <h3 class = "pc">In stock: <?php echo $modelm;?><h3>
-            
-            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_m">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
-                <button class = "button2 pc">Add to cart</button>
-            </form><br>
-            <p class = "pc">Ideal for anyone looking to have a bit of fun.<br>For just $99.99 you and your pet can have a blast of a time! (and not just figuratively)</p>
-        </div>
-        <br>
-
-        <!--Model Z product-->
-        <div class = "product">
-            <img src = "imgs/Model_z.png" class = "image" alt="Model Z">
-            <h2 class = "pc">Model Z</h2>
-            <h3 class = "pc">In stock: <?php echo $modelz;?><h3>
-            
-            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_z">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
-                <button class = "button2 pc">Add to cart</button>
-            </form><br>
-            <p class = "pc">If you want aerodynamics and speed, this is the one you are looking for!<br>With a built in gps just in case they go too far.<br>Only $149.99!</p>
-        </div>
-        <br>
-
-        <!--Model B product-->
-        <div class = "product">
-            <img src = "imgs/Model_b.png" class = "image" alt="Model B">
-            <h2 class = "pc">Model B</h2>
-            <h3 class = "pc">In stock: <?php echo $modelb;?><h3>
-            
-            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_b">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity" required="required"><br>
-                <button class = "button2 pc">Add to cart</button>
-            </form><br>
-            <p class = "pc">It does not have wings as it is designed for those who prefer the ground.<br>Or for those who already have wings (Like ducks).<br>Only 49.99!</p>
-        </div>
-        <br>
-        
-        <!--Model A product-->
-        <div class = "product">
-            <img src = "imgs/Model_a.png" class = "image" alt="Model A">
-            <h2 class = "pc">Model A</h2>
-            <h3 class = "pc">In stock: <?php echo $modela;?><h3>
-            
-            <form class = "pc" method = "post" class = "logincontent" action = "additem.php?product=model_a">
-                <input class = "pc" type = "text" name = "qty" placeholder="Quantity"required="required"><br>
-                <button class = "button2 pc">Add to cart</button>
-            </form><br>
-            <p class = "pc">Our open-source model!<br>If you are a wanting something you can add your own upgrades to, this one is for you.<br>Only $199.99!</p>
-        </div>
-        <br>
 
     </div>
-
-    <!--Code for the footer-->
-    <div class="footer txt">
-        <a href="index.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="products.php">Products</a>
-        <a href="contact.php">Contact</a>
-        <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
-        <br>
-        <p>2019-2020 Flyimals Inc.</p>
-    </div>
+    <?php
+        include "includes/footer.php";
+    ?>
 </body>
 </html>

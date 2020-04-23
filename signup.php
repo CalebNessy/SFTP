@@ -1,42 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flyimals</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" type = "text/css" href = "CSS/main.css" />
-    <link rel = "stylesheet" type = "text/css" href = "CSS/login.css" />
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
-</head>
 <body>
 
-    <!--Code for the header-->
-    <div class = "header txt">
-        <!--Logo Image-->
-        <img src="imgs/Logo.png" alt="Logo" class="logo">
-        <!--Home Page Button-->
-        <button class="button" onclick="window.location.href='index.php'">Home</button>
-        <!--About Page Button-->
-        <button class="button" onclick="window.location.href='about.php'">About</button>
-        <!--Product Page Button-->
-        <button class="button" onclick="window.location.href='products.php'">Products</button>
-        <!--Contact Page Button-->
-        <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
-        <!--Signup Page Button-->
-        <button id="login"  style="border: 2px solid #000;" onclick="window.location.href='signup.php'">Sign Up</button>
-        <!--Login Page Button-->
-        <button id="login"  onclick="window.location.href='login.php'">Login</button>
-    </div>
-
-    <!--Code for the top margin-->
-    <div class = "topmargin"></div>
-    <br>
-
+    <?php
+        include "includes/header.php";
+    ?>
     <!--Code for the main content-->
-    <div class = "loginform txt" style = "height: 500px;">
+    <div class = "slideshow txt" style = "height: 500px;">
         <h1>Sign Up</h1>
         <h5>
         <?php
@@ -171,7 +141,7 @@
             <input type="text" placeholder="Email" name="email" value="<?php echo($mail);?>"><br><br>
             <input type="password" placeholder="Password" name="password"><br><br>
             <input type="password" placeholder="Repeat Password" name="repeat-pwd"><br><br><br><br>
-            <button class="button loginbutton" value="submit" class = "button" name="signup-submit">Sign Up</button><br>
+            <button class="buttonC loginbutton" value="submit" class = "button" name="signup-submit">Sign Up</button><br>
         </form>
         <!--PHP for inserting the filled out form into the database if there are no errors-->
        <?php

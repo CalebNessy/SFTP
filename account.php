@@ -11,55 +11,17 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!--Code for initializing the session-->
+    
+    <!--Include the Header-->
     <?php
-        session_start();
-        // Check if the user is already logged in
-        $showhide = "hide";
-        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            $showhide = "show";
-        }else{
-            $showhide = "hide";
-        }
+        include "includes/header.php";
     ?>
-
-    <!--Code for the header-->
-    <div class = "header txt">
-        <img src="imgs/Logo.png" alt="Logo" class="logo">
-        <button class="button" onclick="window.location.href='index.php'">Home</button>
-        <button class="button" onclick="window.location.href='about.php'">About</button>
-        <button class="button" onclick="window.location.href='products.php'">Products</button>
-        <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
-        <button style="border: 2px solid #000;" class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
-        <button id="login" onclick="window.location.href='login.php'"><?php
-            // Check if the user is already logged in
-            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                echo "Logout as ".$_SESSION['username'];
-            }else{
-                echo "Login";
-            }
-        ?></button>
-        <!--Signup Page Button-->
-        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
-    </div>
-
-    <!--Code for the top margin-->
-    <div class = "topmargin"></div>
     
     <!--Code for the content-->
     <div class = "content" style = "height: 500px;">
         <h3 class = "txt">
             <?php
-                //create variables for starting the server
-                $servername = "localhost:3306";
-                $db_username = "nfh_cness";
-                $db_password = "homeschool";
-                $db_database = "nfh_cness";
-                //Initialize the Database
-                $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
-                if($mySQLI->connect_error){
-                    die("Connection Failed." . $mySQLI->connect_error);
-                }
+                include "includes/connect.php";
                 $username = $_SESSION['username'];
                 $sql = "SELECT email, firstname, lastname FROM users WHERE username = '$username'";
                 $result = mysqli_query($mySQLI, $sql);
@@ -84,15 +46,9 @@
         </h3>
     </div>
     
-    <!--Code for the footer-->
-    <div class="footer txt">
-        <a href="index.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="products.php">Products</a>
-        <a href="contact.php">Contact</a>
-        <a href="account.php" class = "<?php echo $showhide;?>">Account</a>
-        <br>
-        <p>2019-2020 Flyimals Inc.</p>
-    </div>
+    <!--Include the footer-->
+    <?php
+        include "includes/footer.php"
+    ?>
 </body>
 </html>

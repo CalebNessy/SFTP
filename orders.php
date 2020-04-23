@@ -12,39 +12,10 @@
 </head>
 <body>
 
-    <!--Initialize the session-->
+    <!--Code for including-->
     <?php
-        session_start();
-        // Check if the user is already logged in
-        $showhide = "hide";
-        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            $showhide = "show";
-        }else{
-            $showhide = "hide";
-        }
+        include "includes/header.php";
     ?>
-
-    <!--Code for the header-->
-    <div class = "header txt">
-        <img src="imgs/Logo.png" alt="Logo" class="logo">
-        <button class="button" onclick="window.location.href='index.php'">Home</button>
-        <button class="button" onclick="window.location.href='about.php'">About</button>
-        <button class="button" onclick="window.location.href='products.php'">Products</button>
-        <button  class="button" onclick="window.location.href='contact.php'">Contact</button>
-        <button class="<?php echo $showhide ?> button" onclick="window.location.href='account.php'">Account</button>
-        <button id="login" onclick="window.location.href='login.php'"><?php
-            // Check if the user is already logged in
-            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                echo "Logout as ".$_SESSION['username'];
-            }else{
-                echo "Login";
-            }
-        ?></button>
-        <!--Signup Page Button-->
-        <button class = "<?php if($showhide == "show"){echo "hide";} else if ($showhide == "hide") {echo "show";} ?>" id="login" onclick="window.location.href='signup.php'">Sign Up</button>
-
-    </div>
-    
     <!--Code for the top margin-->
     <div class = "topmargin"></div>
 
@@ -66,7 +37,8 @@
             //Create variables from the session data
             $username = $_SESSION['username'];
             $email = $_SESSION['email'];
-            $sql = "SELECT * FROM OrderHistory WHERE username = '$username' and email = '$email'";
+            $uid = $_SESSION['uid'];
+            $sql = "SELECT * FROM OrderHistory WHERE userid = '$uid'";
             $result = mysqli_query($mySQLI, $sql);
             $count = mysqli_num_rows($result);
             $number = 0;

@@ -22,18 +22,8 @@
                 <button name = "confirm" class = "button2">CONFIRM</button>
             </form>
             <?php
-                session_start();
-                if($_SESSION['loggedin'] == false){
-                    $_SESSION["loggedout"] = true;
-                    header("Location: index.php");
-                }
-                //create variables for starting the server
-                $servername = "localhost:3306";
-                $db_username = "nfh_cness";
-                $db_password = "homeschool";
-                $db_database = "nfh_cness";
-                //Initialize the Database
-                $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
+                include "includes/session.php";
+                include "includes/connect.php";
                 //detect if there is an error connecting to the database
                 if($mySQLI->connect_error){
                     header("location: signup.php?error=connecterror");

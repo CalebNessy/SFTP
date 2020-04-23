@@ -11,29 +11,14 @@
 <body>
     <!--PHP for adding an item to the cart-->
     <?php
-        //initialize the session
-        session_start();
-        if($_SESSION["loggedin"] === false){
-            $showhide = "hide";
-            header("Location: login.php");
-        }
-        //create variables for starting the server
-        $servername = "localhost:3306";
-        $db_username = "nfh_cness";
-        $db_password = "homeschool";
-        $db_database = "nfh_cness";
-        //Initialize the Database
-        $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
-        if($mySQLI->connect_error){
-            echo("Failed to connect: ".$mySQLI->connect_error);
-            exit();
-        }
-        $uid = $_SESSION["username"];
-        $email = $_SESSION["email"];
+        
+        include "includes/session.php";
+        include "includes/connect.php";
+        $userid = $_SESSION['uid'];
         $product = $_GET["product"];
         $qty = $_POST["qty"];
         if($qty>0){
-            $sql = "INSERT INTO cart (item, quantity, username, email) VALUES ('$product', '$qty', '$uid', '$email')";
+            $sql = "INSERT INTO cart (item, quantity, userid) VALUES ('$product', '$qty', '$userid')";
             mysqli_query($mySQLI, $sql);
         }
         header("Location: cart.php");
