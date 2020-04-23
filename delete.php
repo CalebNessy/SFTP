@@ -31,8 +31,9 @@
                 }
                 if(isset($_POST["confirm"])){
                     $password = $_POST["password"];
+                    $uid = $_SESSION["uid"];
                     if($_SESSION["password"] == $password){
-                        $sql = "DELETE FROM users WHERE password = '$password'";
+                        $sql = "DELETE FROM users WHERE password = '$password' and uno = '$uid'";
                         mysqli_query($mySQLI, $sql);
                         $_SESSION = array();
                         session_destroy();
