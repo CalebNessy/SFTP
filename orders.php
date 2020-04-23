@@ -27,7 +27,6 @@
                     $rw = mysqli_fetch_assoc($rslt);
                     $productName = $rw["productName"];
                     $qty = $row["orderno"];
-                    $show = "no";
                     $id = "0";
                     $date = $row["date"];
                     $img = "data:image/jpeg;base64, " . base64_encode($rw['image']);
