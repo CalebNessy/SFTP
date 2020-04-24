@@ -8,6 +8,8 @@
  I also had trouble with Chrome when I changed main.css, my website wouldn't update in Chrome. I finally moved to Microsoft Edge, and thankfully that worked for changing css. 
  (Edit: The website now works in Chrome. I think it just took a long time to realize the website updated.)
  
+I talked to Micah from Dev Catalyst to see if the php mail() function would work on the Dev Catalyst servers, and he said that they weren't set up for that.
+
 My favorite feature about the website is the login and signup system. Part of the reason it is my favorite feature is because it took me a while to create, and by a while, I mean a month or so.
 
-I am really happy on the end result, and can't wait to use these skills that if I create a buisness some day!
+I am really happy on the end result, and can't wait to use these skills if I create a buisness some day!
