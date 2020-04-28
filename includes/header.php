@@ -35,7 +35,7 @@
     <button id="login" class = "<?php if($name == 'login.php'){echo 'outline';}?>" onclick="window.location.href='login.php'"><?php
         // Check if the user is already logged in
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            echo "Logout as ".$_SESSION['username'];
+            echo "Logout from ".$_SESSION['username'];
         }else{
             echo "Login";
         }

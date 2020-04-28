@@ -26,12 +26,7 @@
                 $subject = 'Customer Message';
 
                 $body = "From: " . $name . "\n E-Mail: " . $email . "\n Message:\n" . $message;
-                $sent = mail($to, $subject, $body, $from);
-                if($sent){
-                    echo "Your message has been sent.";
-                }else{
-                    echo "We have encountered a problem, please try again.";
-                }
+                echo "<h3>This feature currently does not work.</h3>";
             }
         ?>
     </div>

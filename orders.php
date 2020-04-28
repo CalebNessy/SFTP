@@ -31,6 +31,7 @@
                     $date = $row["date"];
                     $img = "data:image/jpeg;base64, " . base64_encode($rw['image']);
                     include "includes/orderitem.php";
+                    echo "<br>";
                 }
             }else{
                 echo "Any orders you make will appear here";

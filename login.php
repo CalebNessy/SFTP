@@ -7,6 +7,13 @@
     <!--Code for the login form-->
     <div class="slideshow txt" style = "height: 500px;">
         <h1>Log In</h1>
+        <?php
+            if (isset($_GET["error"])){
+                if($_GET["error"] == "incorrectcreds"){
+                    echo "<h3>We are sorry, but we couldn't find that combination in our database.</h3>";
+                }
+            }
+        ?>
         <form class="logincontent" method="post">
             <br>
             <input type="text" name="username" placeholder="Username"><br><br>
@@ -17,6 +24,11 @@
         
         <?php
             include "includes/connect.php";
+            if (isset($_SESSION["loggedin"])){
+                if ($_SESSION["loggedin"] == true){
+                    header("Location: logout.php");
+                }
+            }
             //Initialize the Database
             $mySQLI = new mysqli($servername, $db_username, $db_password, $db_database);
             if($mySQLI->connect_error){
